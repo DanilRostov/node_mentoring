@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "task1": "nodemon task1.js",
-    "task2": "nodemon task2.js"
+    "babel-node": "babel-node --presets=@babel/preset-env",
+    "task1": "nodemon --exec npm run babel-node -- task1.js",
+    "task2": "nodemon --exec npm run babel-node -- task2.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/DanilRostov/node_mentoring#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "nodemon": "^2.0.13"
   },
   "dependencies": {
