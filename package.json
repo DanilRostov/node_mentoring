@@ -1,0 +1,25 @@
+{
+  "name": "node_mentoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "task1": "node task1.js",
+    "task2": "node task2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanilRostov/node_mentoring.git"
+  },
+  "author": "Danil Rostov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanilRostov/node_mentoring/issues"
+  },
+  "homepage": "https://github.com/DanilRostov/node_mentoring#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
