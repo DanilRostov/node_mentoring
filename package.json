@@ -1,0 +1,30 @@
+{
+  "name": "node_mentoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel-node": "babel-node --presets=@babel/preset-env",
+    "task1": "nodemon --exec npm run babel-node -- task1.js",
+    "task2": "nodemon --exec npm run babel-node -- task2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanilRostov/node_mentoring.git"
+  },
+  "author": "Danil Rostov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanilRostov/node_mentoring/issues"
+  },
+  "homepage": "https://github.com/DanilRostov/node_mentoring#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
+}
