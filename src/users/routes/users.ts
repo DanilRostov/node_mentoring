@@ -1,11 +1,15 @@
 import express, { Router } from 'express';
 import { v4 as uuid } from 'uuid';
+import expressJoiValidation from 'express-joi-validation';
 
 import { logger } from '../../main';
 import { User } from '../interfaces/user';
 import { sortByASC } from '../util/users';
+import { userSchema } from '../schemas/user';
 
 export const UsersRouter: Router = express.Router();
+
+const validator = expressJoiValidation.createValidator({});
 
 let users: User[] = [];
 
@@ -35,7 +39,7 @@ UsersRouter.get('/:id', (req, res) => {
   }
 });
 
-UsersRouter.post('/', (req, res) => {
+UsersRouter.post('/', validator.body(userSchema), (req, res) => {
   logger.info('create user request');
   const createdUser = {
     ...req.body.user,
@@ -46,7 +50,7 @@ UsersRouter.post('/', (req, res) => {
   res.status(200).json(createdUser);
 });
 
-UsersRouter.put('/:id', (req, res) => {
+UsersRouter.put('/:id', validator.body(userSchema), (req, res) => {
   logger.info('update user request');
   const updatedData = req.body.user;
   const userId = req.params.id;
